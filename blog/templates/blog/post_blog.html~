@@ -1,0 +1,43 @@
+{% extends 'blog/base.html' %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}Blog-Details{% endblock title %}
+
+{% block content %}
+
+	<div class="container">
+			<br />
+				<br />
+					<br />
+		<div class="jumbotron">
+			<div class="row">
+				<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				
+                 	<div class="form-group">
+                		<input  class="form-control" type="text" required="required"  name="title" placeholder="Title">
+                    </div>
+                    	<br />
+                    <div class="form-double">
+                    	<input type="file" name="photo" required="required" accept="image/*">
+                   	</div>
+                   		<br />
+                   	<div class="form-double">
+                    	<textarea name="body" rows="5" required="required" placeholder="Enter the story"></textarea>
+                   	</div>
+                   	<br />
+                   	
+                   <div class="form-double">
+                    	 <button class="bttn bttn-primary">Submit!</button>
+                   	</div>
+                   	
+                
+                </form>
+			</div>
+		</div>
+	
+	</div>
+
+
+{% endblock %}
