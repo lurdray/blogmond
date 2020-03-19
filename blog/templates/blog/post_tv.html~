@@ -2,7 +2,7 @@
 
 {% block blogactive %}active{% endblock blogactive %}
 
-{% block title %}Blogmond blogpost{% endblock title %}
+{% block title %}Blogmond TVpost{% endblock title %}
 
 {% block content %}
 
@@ -10,9 +10,8 @@
 			<br />
 				<br />
 					<br />
-					<h3>Blogmond blogpost</h3>
+					<h3>Blogmond TVpos</h3>
 		<div class="jumbotron">
-			
 			<div class="row">
 				<form method="post" enctype="multipart/form-data">
 				{% csrf_token %}
@@ -22,7 +21,7 @@
                     </div>
                     	<br />
                     <div class="form-double">
-                    	<input type="file" name="photo" required="required" accept="image/*">
+                    	<input type="file" name="photo" required="required" accept="video/*">
                    	</div>
                    		<br />
                    	<div class="form-double">

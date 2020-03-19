@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}Blogmond Series-Details{% endblock title %}
+
+{% block content %}
+
+	<div class="container">
+
+		<div class="row">
+		    <!-- Blog Entries Column -->
+		    <div class="col-md-12">
+
+		        <h3 class="my-4" style="color:teal;">{{ series.title }}</h3>
+		        <hr>
+		        <p> Posted on {{ series.pub_date }}</p>
+		        <hr>
+
+		        <!-- Blog Post -->
+		        <div class="card mb-4">
+		            <img class="card-img-top" src="{{ series.image.url }}" alt="Card image cap" width="750px" height="450px">
+		            <div class="card-body">
+		                <p class="card-text">{{ series.body }}</p>
+		            </div>
+		        </div>
+
+		    </div>
+		</div>
+
+	</div>
+
+
+{% endblock content %}

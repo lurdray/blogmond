@@ -2,7 +2,7 @@
 
 {% block blogactive %}active{% endblock blogactive %}
 
-{% block title %}Blog-Details{% endblock title %}
+{% block title %}Blogmond blogpost{% endblock title %}
 
 {% block content %}
 
@@ -10,7 +10,9 @@
 			<br />
 				<br />
 					<br />
+					<h3>Blogmond blogpost</h3>
 		<div class="jumbotron">
+			
 			<div class="row">
 				<form method="post" enctype="multipart/form-data">
 				{% csrf_token %}

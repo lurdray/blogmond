@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}Blogmond Tv-Details{% endblock title %}
+
+{% block content %}
+
+	<div class="container">
+
+		<div class="row">
+		    <!-- Blog Entries Column -->
+		    <div class="col-md-12">
+
+		        <h3 class="my-4" style="color:teal;">{{ tv.title }}</h3>
+		        <hr>
+		        <p> Posted on {{ tv.pub_date }}</p>
+		        <hr>
+
+		        <!-- Blog Post -->
+		        <div class="card mb-4">
+		           
+		            <video width="100%" controls>
+		            	<source src="{{ tv.video.url }}" type="video/mp4">
+		            	sorry your device does not support this video
+		            </video>
+		            
+		            <div class="card-body">
+		                <p class="card-text">{{ tv.body }}</p>
+		            </div>
+		        </div>
+
+		    </div>
+		</div>
+
+	</div>
+
+
+
+{% endblock content %}

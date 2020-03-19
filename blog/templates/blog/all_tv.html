@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}Blogmond All Series{% endblock title %}
+
+{% block content %}
+
+	<div class="container">
+		
+		 <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">All TVs</h5>
+                <div class="card-body">
+                	<ul>
+                		{% for each_tv in tvs %}
+		            		<li>
+		            			<a href="{% url 'blog:tv_detail' each_tv.id %}" />
+		            				{{ each_tv.title }}
+		            			</a>
+		            		</li>
+                		{% endfor %}
+                	</ul>
+                </div>
+            </div>
+
+
+	</div>
+
+{% endblock content %}

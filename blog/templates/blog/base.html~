@@ -30,7 +30,9 @@
 	#imgcover {
 	  border: 2px;
 	  padding: 25px;
-	  background: url({% static 'blog/images/blog.jpg' %});
+	  color: #fff;
+	  height: 300px;
+	  background: url({% static 'blog/images/blog.png' %});
 	  background-repeat: no-repeat;
 	  background-size: 100% 100%;
 	}

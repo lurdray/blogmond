@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block title %}Blogmond All Post{% endblock title %}
+
+{% block content %}
+
+	<div class="container">
+		
+		 <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">All Posts</h5>
+                <div class="card-body">
+                	<div class="row">
+                		{% for post in posts %}
+							<div class="col-sm-3">
+								<div class="card my-3">
+									<div class="card-body">
+										<a href="{% url 'blog:post_detail' post.id %}">
+											<img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap" width="50px" height="100px">
+										</a>
+									</div>
+									<div class="card-footer text-muted">
+										<a href="{% url 'blog:post_detail' post.id %}">
+											{{ post.title }}
+										</a>
+									</div>
+								</div>
+							 </div>
+						{% endfor %}	
+					</div>
+                </div>
+            </div>
+
+
+	</div>
+
+{% endblock content %}

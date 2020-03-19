@@ -8,12 +8,16 @@
 {% block content %}
 
 	<section class="text-center">
-		<div class="jumbotron container">
+		<div class="jumbotron container" id="imgcover">
+				<br />
+
 		    <h1 class="jumbotron-heading">Welcome to BLOGMOND</h1>
-		    <a href="#">Trends <span class="badge"></span></a>
-		     <a href="#">Gossip <span class="badge"></span></a>
-		      <a href="#">Analytics <span class="badge"></span></a>
-		       <a href="#">Facts <span class="badge"></span></a>
+		    	<br />
+		    	<br />
+		    	 <a href="{% url 'blog:all_tv' %}" class="btn btn-warning">Blogmond Tv <span class="badge"></span></a>
+		    	  <a href="{% url 'blog:all_series' %}" class="btn btn-primary">Series<span class="badge"></span></a>
+		    <a href="{% url 'blog:all_post' %}" class="btn btn-success">Trends <span class="badge"></span></a>
+		     <a href="{% url 'blog:all_post' %}" class="btn btn-primary">Gossip <span class="badge"></span></a>
 		</div>
 	</section>
 	
@@ -44,24 +48,23 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-            <h1 class="my-4">Latest posts</h1>
+            <h3 class="my-4">Breaking News</h3>
             <hr>
 
             <!-- Blog Post  this ois just some really cool func files from web net core!-->
-
-            {% for post in posts %}
-            <div class="card mb-4">
-                <a href="{% url 'blog:detail' post.id %}"><img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap" width="750px" height="300px"></a>
+            <div class="card mb-5">
+                <a href="{% url 'blog:breaking_detail' breaking.id %}"><img class="card-img-top" src="{{ breaking.image.url }}" alt="Card image cap" width="750px" height="450px"></a>
                 <div class="card-body">
-                    <a href="{% url 'blog:detail' post.id %}"><h2 class="card-title" style="color:teal;">{{ post.title }}</h2></a>
+                    <a href="{% url 'blog:breaking_detail' breaking.id %}"><h3 class="card-title" style="color:teal;">{{ breaking.title }}</h3></a>
                     <p class="card-text">{{ post.body|truncatewords:15 }}</p>
-                    <a href="{% url 'blog:detail' post.id %}" class="btn btn-primary">Read More →</a>
+                    <a href="{% url 'blog:breaking_detail' breaking.id %}" class="btn btn-primary">Read More →</a>
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on {{ post.pub_date }}
+                    Posted on {{ breaking.pub_date }}
                 </div>
             </div>
-            {% endfor %}
+
+            
         </div>
 
         <!-- Sidebar Widgets Column -->
@@ -70,39 +73,87 @@
 			
             <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Hot Stories</h5>
+                <h5 class="card-header">Blogmond TV</h5>
                 <div class="card-body">
                 	<ul>
-                		{% for post in all_posts %}
+                		{% for each_tv in tv %}
 		            		<li>
-		            			<a href="{% url 'blog:detail' post.id %}" />
-		            				{{ post.title }}
+		            			<a href="{% url 'blog:tv_detail' each_tv.id %}" />
+		            				{{ each_tv.title }}
 		            			</a>
 		            		</li>
                 		{% endfor %}
                 	</ul>
                 </div>
+                <a href="{% url 'blog:all_tv' %}" class="btn btn-warning">view all →</a>
+            </div>
+            
+             <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Blogmond Series</h5>
+                <div class="card-body">
+                	<ul>
+                		{% for each_series in series %}
+		            		<li>
+		            			<a href="{% url 'blog:series_detail' each_series.id %}" />
+		            				{{ each_series.title }}
+		            			</a>
+		            		</li>
+                		{% endfor %}
+                	</ul>
+                </div>
+                <a href="{% url 'blog:all_series' %}" class="btn btn-primary">view all →</a>
+            </div>
+            
+             <!-- Side Widget -->
+            <div class="card my-4">
+                <h5 class="card-header">Blogmond Stories</h5>
+                <div class="card-body">
+                	<ul>
+                		{% for each_post in posts %}
+		            		<li>
+		            			<a href="{% url 'blog:post_detail' each_post.id %}" />
+		            				{{ each_post.title }}
+		            			</a>
+		            		</li>
+                		{% endfor %}
+                	</ul>
+                </div>
+				<a href="{% url 'blog:all_post' %}" class="btn btn-success">view all →</a>
             </div>
 
         </div>
 
     </div>
     <!-- /.row -->
+    
+    <div class="row">
+    
+    	<!-- Side Widget -->
+    	
+    		{% for post in all_posts %}
+    		<div class="col-sm-3">
+		        <div class="card my-3">
+		            <div class="card-body">
+		            	<a href="{% url 'blog:post_detail' post.id %}">
+		            		<img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap" width="50px" height="100px">
+		            	
+		            </div>
+		            <div class="card-footer text-muted">
+		            	<a href="{% url 'blog:post_detail' post.id %}">
+		            		{{ post.title }}
+		            	</a>
+		            </div>
+		        </div>
+		     </div>
+            {% endfor %}	
+        
+        
+      </div>
+    	
+
+    
 </div>
 {% endblock content %}
 
-
-<div id="imgcover">
-	<section class="jumbotron text-center" style="color:white; background-image:url({% static 'blog/images/blogs.jpgs' %});" id="imgcover">
-		<div class="container">
-		    <h1 class="jumbotron-heading">Welcome to BLOGMOND</h1>
-		    
-		    <p>
-		    <span class="label label-default">Trends</span> 
-		    <span class="label label-default">Analytics</span> 
-		    <span class="label label-default">Facts</span> 
-		    <span class="label label-default">Gossip</span> 
-		</div>
-	</section>
-</div>
 

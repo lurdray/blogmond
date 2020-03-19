@@ -2,7 +2,7 @@
 
 {% block blogactive %}active{% endblock blogactive %}
 
-{% block title %}Blog-Details{% endblock title %}
+{% block title %}Blog Post-Details{% endblock title %}
 
 {% block content %}
 <!-- all posts -->
@@ -29,13 +29,15 @@
     </div>
 
 </div>
-<!-- /.row -->
-	<br />
-	<br />
-	<br />
-	<br />
+<!-- /.row -->	
 
-		<div class="row pt-3 text-center container">
+</div>
+
+
+{% endblock content %}
+
+
+<div class="row pt-3 text-center container">
 			<h2 class="my-4">Recents Post</h2>
 		</div>
 		
@@ -55,8 +57,3 @@
 		        </div>
 		        {% endfor %}
 		</div>
-
-</div>
-
-
-{% endblock content %}
