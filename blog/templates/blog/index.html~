@@ -3,7 +3,7 @@
 
 {% block blogactive %}active{% endblock blogactive %}
 
-{% block title %}Blog{% endblock title %}
+{% block title %}Blogsmond{% endblock title %}
 
 {% block content %}
 
@@ -11,10 +11,10 @@
 		<div class="jumbotron container" id="imgcover">
 				<br />
 
-		    <h1 class="jumbotron-heading">Welcome to BLOGMOND</h1>
+		    <h1 class="jumbotron-heading">Welcome to BLOGSMOND</h1>
 		    	<br />
 		    	<br />
-		    	 <a href="{% url 'blog:all_tv' %}" class="btn btn-warning">Blogmond Tv <span class="badge"></span></a>
+		    	 <a href="{% url 'blog:all_tv' %}" class="btn btn-warning">Blogsmond Tv <span class="badge"></span></a>
 		    	  <a href="{% url 'blog:all_series' %}" class="btn btn-primary">Series<span class="badge"></span></a>
 		    <a href="{% url 'blog:all_post' %}" class="btn btn-success">Trends <span class="badge"></span></a>
 		     <a href="{% url 'blog:all_post' %}" class="btn btn-primary">Gossip <span class="badge"></span></a>
@@ -73,7 +73,7 @@
 			
             <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Blogmond TV</h5>
+                <h5 class="card-header">Blogsmond TV</h5>
                 <div class="card-body">
                 	<ul>
                 		{% for each_tv in tv %}
@@ -90,7 +90,7 @@
             
              <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Blogmond Series</h5>
+                <h5 class="card-header">Blogsmond Series</h5>
                 <div class="card-body">
                 	<ul>
                 		{% for each_series in series %}
@@ -107,7 +107,7 @@
             
              <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header">Blogmond Stories</h5>
+                <h5 class="card-header">Blogsmond Stories</h5>
                 <div class="card-body">
                 	<ul>
                 		{% for each_post in posts %}

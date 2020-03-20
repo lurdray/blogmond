@@ -2,7 +2,7 @@
 
 {% block blogactive %}active{% endblock blogactive %}
 
-{% block title %}Blogmond Breaking-Details{% endblock title %}
+{% block title %}Blogsmond Breaking-Details{% endblock title %}
 
 {% block content %}
 

@@ -44,7 +44,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{% url 'blog:index' %}">BLOGMOND</a>
+            <a class="navbar-brand" href="{% url 'blog:index' %}">BLOGSMOND</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link {% block blogactive %}{% endblock blogactive %}" href="{% url 'blog:index' %}"><i
-                                class="fas fa-blog"></i>Blogmond</a>
+                                class="fas fa-blog"></i>Blogsmond</a>
                     </li>
                 </ul>
             </div>
@@ -71,7 +71,7 @@
 
     <footer class="text-muted">
         <div class="container text-center">
-            <p>&copy; BLOGMOND I {% now 'Y' %}</p>
+            <p>&copy; BLOGSMOND I {% now 'Y' %}</p>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
